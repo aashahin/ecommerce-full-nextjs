@@ -1,13 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import {Almarai, Inter} from "next/font/google";
+import {IBM_Plex_Sans_Arabic} from "next/font/google";
 import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import clerkAr from "@/public/locales/ar/clerkAr";
 
-const inter = Almarai({
-    subsets: ["arabic"],
-    weight: ['400', '700'],
+const font = IBM_Plex_Sans_Arabic({
+    subsets: ["arabic", "latin"],
+    weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={clerkAr}>
       <html lang="ar" dir="rtl">
-        <body className={inter.className}>{children}</body>
+        <body className={font.className}>{children}</body>
       </html>
     </ClerkProvider>
   );
