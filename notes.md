@@ -10,4 +10,3 @@
     --bg-100:#DDDDDD;
     --bg-200:#EEEEEE;
     --bg-300:#d1d1d1;
-
