@@ -1,4 +1,5 @@
 # Colors
+
     --primary-100:#658864;
     --primary-200:#B7B78A;
     --primary-300:#fdf6fd;
@@ -9,4 +10,4 @@
     --bg-100:#DDDDDD;
     --bg-200:#EEEEEE;
     --bg-300:#d1d1d1;
-      
+
