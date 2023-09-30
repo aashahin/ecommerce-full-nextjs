@@ -1,7 +1,13 @@
 {
   "Index": {
-    "titleModal": "Hello world!",
-    "descModal": "This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.",
-    "contentModal": "It uses utility classes for typography and spacing to space content out within the larger container."
+    "titleStoreModal": "Add a new store",
+    "descStoreModal": "Please enter the name of the store you want to add",
+    "nameStoreModal": "Name of the store",
+    "errorStoreName": "An error occurred while creating the store",
+    "successStoreName": "The store was created successfully",
+    "cancel": "Cancel",
+    "create": "Create",
+    "required": "Required",
+    "mustBeThreeCharacters": "Must be at least 3 characters"
   }
 }

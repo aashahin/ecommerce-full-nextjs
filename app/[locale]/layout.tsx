@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import ModalProvider from "@/providers/modal-provider";
 import font from "@/lib/fonts/fonts";
+import ToastProvider from "@/providers/toast-provider";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -38,6 +39,7 @@ export default async function RootLayout({
       <ClerkProvider localization={clerkAr}>
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
           <body className={font.className}>
+            <ToastProvider />
             <ModalProvider />
             {children}
           </body>
