@@ -8,7 +8,7 @@ export default async function DashboardLayout({
   params: { locale, storeId },
 }: {
   children: React.ReactNode;
-  params: { storeId: string, locale: string };
+  params: { storeId: string; locale: string };
 }) {
   const { userId } = auth();
   if (!userId) {
@@ -27,15 +27,14 @@ export default async function DashboardLayout({
 
   if (!store) {
     return Redirect({
-        to: "/404",
-        locale,
+      to: "/404",
+      locale,
     });
   }
 
   return (
-      <>
-        {/*<h1>Dashboard</h1>*/}
+    <>
       <div>{children}</div>
-        </>
-      )
+    </>
+  );
 }

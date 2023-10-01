@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import {defaultLocale} from "@/middleware";
 
 export default function Redirect({
   to,
@@ -7,5 +8,5 @@ export default function Redirect({
   to: string;
   locale?: string;
 }) {
-  return redirect(locale === "ar" ? to : `/${locale}${to}`);
+  return redirect(locale === defaultLocale ? to : `/${locale}${to}`);
 }

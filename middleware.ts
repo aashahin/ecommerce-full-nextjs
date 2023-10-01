@@ -1,9 +1,10 @@
 import { authMiddleware } from "@clerk/nextjs";
 import createMiddleware from "next-intl/middleware";
 
+export const defaultLocale = "ar";
 const intlMiddleware = createMiddleware({
   locales: ["en", "ar"],
-  defaultLocale: "ar",
+  defaultLocale,
   localeDetection: false,
 });
 
