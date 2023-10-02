@@ -1,22 +1,42 @@
 "use client";
 
 import React from "react";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { useParams } from "next/navigation";
+import { usePathname } from "next-intl/client";
+import Link from "next-intl/link";
+import { useTranslations } from "next-intl";
 
-const MainNav = ({
-    className,
-    ...props
-}: React.HTMLAttributes<HTMLElement>) => {
-    return (
-        <nav
-             className={cn(
-                "flex items-center gap-2",
-                className
-            )}
+const MainNav = ({ className }: React.HTMLAttributes<HTMLElement>) => {
+  const t = useTranslations("Index");
+  const params = useParams();
+  const pathname = usePathname();
+
+  const routes = [
+    {
+      label: t("settings"),
+      href: `/${params.storeId}/settings`,
+      isActive: pathname === `/${params.storeId}/settings`,
+    },
+  ];
+
+  return (
+    <nav className={cn("flex items-center gap-4", className)}>
+      {routes.map((route) => (
+        <Link
+          key={route.href}
+          href={route.href}
+          locale={String(params.locale)}
+          className={cn(
+            "px-4 py-2 rounded-md font-medium text-gray-900",
+            route.isActive ? "bg-gray-100" : "hover:text-gray-700",
+          )}
         >
-            MainNav
-        </nav>
-    )
-}
+          {route.label}
+        </Link>
+      ))}
+    </nav>
+  );
+};
 
 export default MainNav;

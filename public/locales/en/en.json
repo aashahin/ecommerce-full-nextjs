@@ -8,6 +8,7 @@
     "cancel": "Cancel",
     "create": "Create",
     "required": "Required",
-    "mustBeThreeCharacters": "Must be at least 3 characters"
+    "mustBeThreeCharacters": "Must be at least 3 characters",
+    "settings": "Settings"
   }
 }
