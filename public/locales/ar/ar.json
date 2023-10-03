@@ -9,6 +9,10 @@
     "create": "إنشاء",
     "required": "مطلوب",
     "mustBeThreeCharacters": "يجب أن يكون 3 أحرف على الأقل",
-    "settings": "الإعدادات"
+    "settings": "الإعدادات",
+    "searchHere": "ابحث هنا...",
+    "notFound": "لم يعثر علي شئ",
+    "stores": "المتاجر",
+    "createStore": "إنشاء متجر"
   }
 }

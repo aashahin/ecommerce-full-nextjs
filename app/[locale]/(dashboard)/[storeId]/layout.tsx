@@ -35,7 +35,7 @@ export default async function DashboardLayout({
 
   return (
     <>
-      <Navbar />
+      <Navbar locale={locale}/>
       <div>{children}</div>
     </>
   );

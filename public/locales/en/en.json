@@ -9,6 +9,10 @@
     "create": "Create",
     "required": "Required",
     "mustBeThreeCharacters": "Must be at least 3 characters",
-    "settings": "Settings"
+    "settings": "Settings",
+    "searchHere": "Search here...",
+    "notFound": "Not found",
+    "stores": "Stores",
+    "createStore": "Create store"
   }
 }

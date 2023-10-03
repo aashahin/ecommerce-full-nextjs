@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { Sa, Us } from "react-flags-select";
 import { usePathname } from "next-intl/client";
 
-const SwitchLanguage = () => {
+const LanguageSwitcher = () => {
     const params = useParams();
     const pathname = usePathname();
 
@@ -22,4 +22,4 @@ const SwitchLanguage = () => {
     )
 }
 
-export default SwitchLanguage;
+export default LanguageSwitcher;
