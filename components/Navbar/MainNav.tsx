@@ -28,7 +28,7 @@ const MainNav = ({ className }: React.HTMLAttributes<HTMLElement>) => {
           href={route.href}
           locale={String(params.locale)}
           className={cn(
-            "px-4 py-2 rounded-md font-medium text-gray-900",
+            "rounded-md font-medium",
             route.isActive ? "bg-gray-100" : "hover:text-gray-700",
           )}
         >
