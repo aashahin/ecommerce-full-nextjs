@@ -9,9 +9,10 @@ export default async function DashboardLayout({
   params: { locale, storeId },
 }: {
   children: React.ReactNode;
-  params: { storeId: string; locale: string };
+ params: { storeId: string; locale: string };
 }) {
   const { userId } = auth();
+
   if (!userId) {
     return Redirect({
       to: "/login",
@@ -21,12 +22,12 @@ export default async function DashboardLayout({
 
   const store = await prisma.store.findUnique({
     where: {
-      id: Number(storeId),
+      id: String(storeId),
       userId: String(userId),
     },
   });
 
-  if (!store) {
+  if (store?.userId !== userId || !store) {
     return Redirect({
       to: "/404",
       locale,
@@ -35,7 +36,7 @@ export default async function DashboardLayout({
 
   return (
     <>
-      <Navbar locale={locale}/>
+      <Navbar locale={locale} />
       <div>{children}</div>
     </>
   );

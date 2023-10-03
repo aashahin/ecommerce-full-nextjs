@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useStoreModal } from "@/hooks/use-store-modal";
@@ -40,10 +39,13 @@ export const StoreModal = () => {
       const res = await axios.post("/api/stores", values);
 
       toast.success(t("successStoreModal"));
+      return window.location.assign(`/${res.data.id}`);
+    } catch (e: object | any) {
+      if (e.response.data === "Store already exists") {
+        return toast.error(t("storeExists"));
+      }
 
-      return window.location.assign(`/${res.data.id}`)
-    } catch (e) {
-      toast.error(t("errorStoreModal"));
+      return toast.error(t("errorStoreModal"));
     } finally {
       setLoading(false);
     }

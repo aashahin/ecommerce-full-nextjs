@@ -1,18 +1,19 @@
 {
   "Index": {
-    "titleStoreModal": "إنشاء متجر جديد",
-    "descStoreModal": "أبدأ بإنشاء متجرك الخاص الآن",
-    "nameStoreModal": "اسم المتجر",
-    "errorStoreModal": "حدث خطأ أثناء إنشاء المتجر",
-    "successStoreModal": "تم إنشاء المتجر بنجاح",
     "cancel": "إلغاء",
     "create": "إنشاء",
-    "required": "مطلوب",
+    "createStore": "إنشاء متجر",
+    "descStoreModal": "أبدأ بإنشاء متجرك الخاص الآن",
+    "errorStoreModal": "حدث خطأ أثناء إنشاء المتجر",
     "mustBeThreeCharacters": "يجب أن يكون 3 أحرف على الأقل",
-    "settings": "الإعدادات",
-    "searchHere": "ابحث هنا...",
+    "nameStoreModal": "اسم المتجر",
     "notFound": "لم يعثر علي شئ",
+    "required": "مطلوب",
+    "searchHere": "ابحث هنا...",
+    "settings": "الإعدادات",
+    "storeExists": "المتجر موجود بالفعل",
     "stores": "المتاجر",
-    "createStore": "إنشاء متجر"
+    "successStoreModal": "تم إنشاء المتجر بنجاح",
+    "titleStoreModal": "إنشاء متجر جديد"
   }
 }

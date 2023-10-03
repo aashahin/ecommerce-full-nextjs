@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prismadb";
+import { nanoid } from "nanoid";
 
 export async function POST(req: Request) {
   try {
@@ -15,8 +16,21 @@ export async function POST(req: Request) {
       return new NextResponse("Name is required", { status: 400 });
     }
 
+    const checkExists = await prisma.store.findFirst({
+      where: {
+        name,
+        userId,
+      },
+    });
+
+    if (checkExists) {
+      return new NextResponse("Store already exists", { status: 400 });
+    }
+
+    const id = nanoid(10);
     const store = await prisma.store.create({
       data: {
+        id,
         name,
         userId,
       },
