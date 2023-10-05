@@ -1,5 +1,6 @@
 {
   "Index": {
+    "save": "حفظ",
     "cancel": "إلغاء",
     "create": "إنشاء",
     "createStore": "إنشاء متجر",
@@ -13,8 +14,11 @@
     "settings": "الإعدادات",
     "settingsDesc": "هنا يمكنك تغيير إعدادات المتجر الخاص بك",
     "storeExists": "المتجر موجود بالفعل",
+    "storeName": "اسم المتجر",
     "stores": "المتاجر",
     "successStoreModal": "تم إنشاء المتجر بنجاح",
-    "titleStoreModal": "إنشاء متجر جديد"
+    "titleStoreModal": "إنشاء متجر جديد",
+    "somethingWentWrong": "حدث خطأ ما",
+    "successUpdate": "تم التحديث بنجاح"
   }
 }

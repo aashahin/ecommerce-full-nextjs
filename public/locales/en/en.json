@@ -1,5 +1,6 @@
 {
   "Index": {
+    "save": "Save",
     "cancel": "Cancel",
     "create": "Create",
     "createStore": "Create store",
@@ -13,8 +14,11 @@
     "settings": "Settings",
     "settingsDesc": "Here you can change the settings of your store",
     "storeExists": "Store already exists",
+    "storeName": "Store name",
     "stores": "Stores",
     "successStoreName": "The store was created successfully",
-    "titleStoreModal": "Add a new store"
+    "titleStoreModal": "Add a new store",
+    "somethingWentWrong": "Something went wrong",
+    "successUpdate": "Updated successfully"
   }
 }

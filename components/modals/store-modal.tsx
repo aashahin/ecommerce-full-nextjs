@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useStoreModal } from "@/hooks/use-store-modal";
@@ -44,7 +46,6 @@ export const StoreModal = () => {
       if (e.response.data === "Store already exists") {
         return toast.error(t("storeExists"));
       }
-
       return toast.error(t("errorStoreModal"));
     } finally {
       setLoading(false);
