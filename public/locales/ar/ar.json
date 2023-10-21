@@ -5,7 +5,7 @@
     "create": "إنشاء",
     "createStore": "إنشاء متجر",
     "descStoreModal": "أبدأ بإنشاء متجرك الخاص الآن",
-    "errorStoreModal": "حدث خطأ أثناء إنشاء المتجر",
+    "errorStoreModal": "حدث خطأ أثناء إنشاء المتجر.",
     "mustBeThreeCharacters": "يجب أن يكون 3 أحرف على الأقل",
     "nameStoreModal": "اسم المتجر",
     "notFound": "لم يعثر علي شئ",
@@ -19,6 +19,14 @@
     "successStoreModal": "تم إنشاء المتجر بنجاح",
     "titleStoreModal": "إنشاء متجر جديد",
     "somethingWentWrong": "حدث خطأ ما",
-    "successUpdate": "تم التحديث بنجاح"
+    "successUpdate": "تم التحديث بنجاح",
+    "AreYouSure": "هل أنت متأكد؟",
+    "continue": "متابعة",
+    "alertModalDesc": "لا يمكن التراجع عن هذا الإجراء.",
+    "overview": "ملخص",
+    "copied": "تم نسخ API إلى الحافظة.",
+    "apiPublic": "API المتجر",
+    "public": "عام",
+    "private": "خاص"
   }
 }

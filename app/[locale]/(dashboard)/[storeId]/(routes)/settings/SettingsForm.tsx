@@ -21,6 +21,8 @@ import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next-intl/client";
+import { ApiAlert } from "@/components/ui/api-alert";
+import { useURL } from "@/hooks/use-url";
 
 interface SettingsFormProps {
   store: Store | any;
@@ -35,6 +37,7 @@ type FormSchema = z.infer<typeof formSchema>;
 const SettingsForm: React.FC<SettingsFormProps> = ({ store }) => {
   const t = useTranslations("Index");
   const { refresh } = useRouter();
+  const url = useURL();
 
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
@@ -58,7 +61,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ store }) => {
     }
   };
   return (
-    <>
+    <div className="flex flex-col mx-4">
       <div className="flex items-center justify-between p-4">
         <Heading title={t("settings")} description={t("settingsDesc")} />
       </div>
@@ -93,7 +96,13 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ store }) => {
           </Button>
         </form>
       </Form>
-    </>
+      <Separator className="my-4" />
+      <ApiAlert
+        title={t("apiPublic")}
+        message={`${url}/api/stores/${store.id}`}
+        type="public"
+          />
+    </div>
   );
 };
 
