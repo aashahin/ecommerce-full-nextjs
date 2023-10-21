@@ -27,6 +27,7 @@
     "overview": "Overview",
     "private": "Private",
     "public": "Public",
-    "successStoreModal": "The store was successfully created"
+    "successStoreModal": "The store was successfully created",
+    "billboards": "Billboards"
   }
 }

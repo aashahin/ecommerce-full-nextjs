@@ -39,7 +39,6 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ store }) => {
   const { refresh } = useRouter();
   const url = useURL();
 
-  const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
   const form = useForm<FormSchema>({
