@@ -1,11 +1,11 @@
 import { authMiddleware } from "@clerk/nextjs";
 import createMiddleware from "next-intl/middleware";
 
-export const defaultLocale = "ar";
 const intlMiddleware = createMiddleware({
   locales: ["en", "ar"],
-  defaultLocale,
+  defaultLocale: "ar",
   localeDetection: false,
+  localePrefix:  "as-needed"
 });
 
 export default authMiddleware({
@@ -18,5 +18,5 @@ export default authMiddleware({
 });
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ["/((?!.*\\..*|_next|_vercel).*)", "/", "/(api|trpc)(.*)"],
 };

@@ -8,7 +8,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useStoreModal } from "@/hooks/use-store-modal";
-import { useRouter } from "next-intl/client";
+import {createSharedPathnamesNavigation} from 'next-intl/navigation';
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,6 +40,8 @@ interface StoreSwitcherProps extends PopoverTriggerProps {
 const StoreSwitcher = ({ className, stores = [] }: StoreSwitcherProps) => {
   const t = useTranslations("Index");
   const storeModal = useStoreModal();
+  const locales = ['en', 'de'] as const;
+  const {useRouter} = createSharedPathnamesNavigation({locales});
   const router = useRouter();
   const params = useParams();
   const [open, setOpen] = React.useState(false);

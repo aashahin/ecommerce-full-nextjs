@@ -7,8 +7,8 @@ export default function Heading({
 }){
     return (
         <div>
-            <h1 className="text-3xl font-bold">{title}</h1>
-            <p className="text-lg text-muted-foreground mt-4">{description}</p>
+            <h1 className="text-2xl font-bold">{title}</h1>
+            <p className="text-md text-muted-foreground mt-2">{description}</p>
         </div>
     )
 }

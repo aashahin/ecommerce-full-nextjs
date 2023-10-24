@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
-import {defaultLocale} from "@/middleware";
+import {useLocale} from 'next-intl';
+
 
 export default function Redirect({
   to,
@@ -8,5 +9,6 @@ export default function Redirect({
   to: string;
   locale?: string;
 }) {
+  const defaultLocale = useLocale();
   return redirect(locale === defaultLocale ? to : `/${locale}${to}`);
 }

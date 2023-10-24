@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import clerkAr from "@/public/locales/ar/clerkAr";
@@ -9,11 +9,15 @@ import ModalProvider from "@/providers/modal-provider";
 import font from "@/lib/fonts/fonts";
 import ToastProvider from "@/providers/toast-provider";
 import {enUS} from "@clerk/localizations";
+import {
+  getTranslator,
+} from 'next-intl/server';
+ 
 
-export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Dashboard for the app",
-};
+// export const metadata: Metadata = {
+  // title: "Dashboard",
+  // description: "Dashboard for the app",
+// };
 
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "ar" }];
@@ -48,4 +52,12 @@ export default async function RootLayout({
       </ClerkProvider>
     </NextIntlClientProvider>
   );
+}
+
+export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
+    const t = await getTranslator(locale, 'Index'); 
+    
+    return {
+        title: t('overview'),
+    };
 }

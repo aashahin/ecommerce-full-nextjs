@@ -3,13 +3,14 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
-import { usePathname } from "next-intl/client";
-import Link from "next-intl/link";
 import { useTranslations } from "next-intl";
+import {createSharedPathnamesNavigation} from 'next-intl/navigation';
 
 const MainNav = ({ className }: React.HTMLAttributes<HTMLElement>) => {
   const t = useTranslations("Index");
   const params = useParams();
+  const locales = ['en', 'ar'] as const;
+  const {Link, usePathname} = createSharedPathnamesNavigation({locales});
   const pathname = usePathname();
 
   const routes = [
@@ -36,7 +37,6 @@ const MainNav = ({ className }: React.HTMLAttributes<HTMLElement>) => {
         <Link
           key={route.href}
           href={route.href}
-          locale={String(params.locale)}
           className={cn(
             "rounded-md font-medium text-gray-500 hover:text-gray-700 px-3 py-2",
             route.isActive ? "bg-gray-100" : "hover:text-gray-700",
@@ -50,3 +50,4 @@ const MainNav = ({ className }: React.HTMLAttributes<HTMLElement>) => {
 };
 
 export default MainNav;
+

@@ -72,8 +72,8 @@ dependencies:
     specifier: 13.5.4
     version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
   next-intl:
-    specifier: ^2.20.2
-    version: 2.20.2(next@13.5.4)(react@18.2.0)
+    specifier: 3.0.0-rc.6
+    version: 3.0.0-rc.6(next@13.5.4)(react@18.2.0)
   postcss:
     specifier: 8.4.30
     version: 8.4.30
@@ -3008,9 +3008,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next-intl@2.20.2(next@13.5.4)(react@18.2.0):
-    resolution: {integrity: sha512-28IarFfRzuOjPo6fjAY2RMWVdeejuvzW7jzwVnBfHU6EB0GYwQPWIq1G5YK4gWb44R6dqnjjVDqphWrLwKE+Vw==}
-    engines: {node: '>=10'}
+  /next-intl@3.0.0-rc.6(next@13.5.4)(react@18.2.0):
+    resolution: {integrity: sha512-Eymf9lfxiqYO6w4YkSe1gQqZMF6Y9AQIAn49uBv8z6JPSEgyelZezt7n/6qECugTVA1rbH/BslrM/jBjMvXXEQ==}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3019,7 +3018,8 @@ packages:
       negotiator: 0.6.3
       next: 13.5.4(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      use-intl: 2.20.2(react@18.2.0)
+      server-only: 0.0.1
+      use-intl: 3.0.0-rc.6(react@18.2.0)
     dev: false
 
   /next@13.5.4(react-dom@18.2.0)(react@18.2.0):
@@ -3630,6 +3630,10 @@ packages:
       lru-cache: 6.0.0
     dev: false
 
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
+
   /set-function-name@2.0.1:
     resolution: {integrity: sha512-tMNCiqYVkXIZgc2Hnoy2IvC/f8ezc5koaRFkCjrpWzGpCd3qbZXPzVy9MAZzK1ch/X0jvSkojys3oqJN0qCmdA==}
     engines: {node: '>= 0.4'}
@@ -4026,9 +4030,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /use-intl@2.20.2(react@18.2.0):
-    resolution: {integrity: sha512-Mvd16M2nAlXcOqm17jWCK69DmsSgn4h9dgvcZ6UbYAzdJQiuu5TFBVxd1f3xRRs2qXb94/E2j/1AcqzmN9TMtg==}
-    engines: {node: '>=10'}
+  /use-intl@3.0.0-rc.6(react@18.2.0):
+    resolution: {integrity: sha512-vkPHZFFTrt/GnLPVn0HdCUeU+BgtitkuONa9e+XC3IeItd6RxJ28RMbAK43QI726N/CrAjds/fGjI8BF21u6Hw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:

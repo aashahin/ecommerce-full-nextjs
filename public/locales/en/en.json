@@ -28,6 +28,8 @@
     "private": "Private",
     "public": "Public",
     "successStoreModal": "The store was successfully created",
-    "billboards": "Billboards"
+    "billboards": "Billboards",
+    "billboardsDesc": "Mange billboards for your store.",
+    "addBillboard": "Add Billboard"
   }
 }

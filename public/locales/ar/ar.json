@@ -28,6 +28,8 @@
     "apiPublic": "API المتجر",
     "public": "عام",
     "private": "خاص",
-    "billboards": "اللوحات الإعلانية"
+    "billboards": "اللوحات الإعلانية",
+    "billboardsDesc": "إدارة اللوحات الإعلانية لمتجرك.",
+    "addBillboard": "أضف لوحة إعلانية"
   }
 }
