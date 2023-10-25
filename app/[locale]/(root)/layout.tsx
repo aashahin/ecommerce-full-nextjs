@@ -20,7 +20,7 @@ export default async function SetupLayout({
 
   const store = await prisma.store.findFirst({
     where: {
-      userId: String(userId),
+      userId: String(userId)
     },
   });
 

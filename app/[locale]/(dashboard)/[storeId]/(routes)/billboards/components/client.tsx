@@ -22,7 +22,7 @@ const BillboardClient = () => {
                description={t("billboardsDesc")}
                />
            <Button 
-               onClick={() => router.push(`/${params.storeId}/billboards/create`)}
+               onClick={() => router.push(`/${params.storeId}/billboards/new`)}
                className="flex items-center gap-2"
                >
             <Plus size={20}/>

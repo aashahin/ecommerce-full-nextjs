@@ -4,6 +4,10 @@
     ],
     "i18n-ally.keystyle": "nested",
     "cSpell.words": [
+        "hookform",
+        "lucide",
+        "nextjs",
+        "prismadb",
         "zustand"
     ]
 }

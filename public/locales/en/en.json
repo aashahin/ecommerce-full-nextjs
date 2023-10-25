@@ -30,6 +30,13 @@
     "successStoreModal": "The store was successfully created",
     "billboards": "Billboards",
     "billboardsDesc": "Mange billboards for your store.",
-    "addBillboard": "Add Billboard"
+    "addBillboard": "Add Billboard",
+    "billboardName": "Billboard Name",
+    "successCreate": "Created successfully",
+    "editBillboard": "Edit Billboard",
+    "createBillboard": "Add a new billboard",
+    "editBillboardDesc": "You can here edit a billboard",
+    "createBillboardDesc": "You can here create a new billboard",
+    "successDelete": "Has been deleted successfully"
   }
 }

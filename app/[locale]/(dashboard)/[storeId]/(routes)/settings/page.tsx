@@ -1,6 +1,6 @@
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
-import SettingsForm from "@/app/[locale]/(dashboard)/[storeId]/(routes)/settings/SettingsForm";
+import SettingsForm from "@/app/[locale]/(dashboard)/[storeId]/(routes)/settings/components/SettingsForm";
 
 interface SettingsPageProps {
   params: { storeId: string };
