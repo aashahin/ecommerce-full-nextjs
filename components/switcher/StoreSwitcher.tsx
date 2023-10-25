@@ -8,7 +8,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useStoreModal } from "@/hooks/use-store-modal";
-import {createSharedPathnamesNavigation} from 'next-intl/navigation';
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,6 +27,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { useTranslations } from "next-intl";
+import useRouter from "@/hooks/use-router";
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<
   typeof PopoverTrigger
@@ -40,8 +40,6 @@ interface StoreSwitcherProps extends PopoverTriggerProps {
 const StoreSwitcher = ({ className, stores = [] }: StoreSwitcherProps) => {
   const t = useTranslations("Index");
   const storeModal = useStoreModal();
-  const locales = ['en', 'de'] as const;
-  const {useRouter} = createSharedPathnamesNavigation({locales});
   const router = useRouter();
   const params = useParams();
   const [open, setOpen] = React.useState(false);

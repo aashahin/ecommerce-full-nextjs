@@ -20,11 +20,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import axios from "axios";
-import {createSharedPathnamesNavigation} from 'next-intl/navigation';
 import { ApiAlert } from "@/components/ui/api-alert";
 import { useURL } from "@/hooks/use-url";
 import { AlertModal } from "@/components/modals/alert-modal";
 import { Trash } from "lucide-react";
+import useRouter from "@/hooks/use-router";
 
 interface SettingsFormProps {
   store: Store | any;
@@ -37,8 +37,6 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const SettingsForm: React.FC<SettingsFormProps> = ({ store }) => {
-  const locales = ['en', 'ar'] as const;
- const {useRouter} = createSharedPathnamesNavigation({locales});
   const t = useTranslations("Index");
   const { refresh, push } = useRouter();
   const url = useURL();
