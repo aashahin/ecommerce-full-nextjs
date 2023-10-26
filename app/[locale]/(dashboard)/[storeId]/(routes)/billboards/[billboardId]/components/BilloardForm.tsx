@@ -25,6 +25,7 @@ import { useURL } from "@/hooks/use-url";
 import { AlertModal } from "@/components/modals/alert-modal";
 import { Trash } from "lucide-react";
 import useRouter from "@/hooks/use-router";
+import ImageUploader from "@/components/ui/image-uploader";
 
 interface BillboardFormProps {
   billboard: Billboard | any;
@@ -44,7 +45,6 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ billboard }) => {
 
   const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-
 
   const title = billboard ? t("editBillboard") : t("createBillboard");
   const desc = billboard ? t("editBillboardDesc") : t("createBillboardDesc");
@@ -74,7 +74,7 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ billboard }) => {
       setLoading(true);
       await axios.delete(`/api/billboards/${billboard.id}`);
       refresh();
-      push('/');
+      push("/");
       toast.success(t("successDelete"));
     } catch (error) {
       toast.error(t("somethingWentWrong"));
@@ -85,62 +85,81 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ billboard }) => {
   };
   return (
     <>
-    <AlertModal 
-      isOpen={open} 
-      onClose={() => setOpen(false)}
-      onConfirm={onDelete}
-      loading={loading}
-    />
-    <div className="flex flex-col mx-4">
-      <div className="flex items-center justify-between p-4">
-        <Heading title={title} description={desc} />
-        <Button
-          disabled={loading}
-          variant="destructive"
-          size="sm"
-          onClick={() => setOpen(true)}
-        >
-          <Trash className="h-4 w-4" />
-        </Button>
-      </div>
-      <Separator />
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="w-fit mt-4 ms-3 p-4"
-        >
-          <div className="grid grid-cols-2">
+      <AlertModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        onConfirm={onDelete}
+        loading={loading}
+      />
+      <div className="flex flex-col mx-4">
+        <div className="flex items-center justify-between p-4">
+          <Heading title={title} description={desc} />
+          {billboard && (
+            <Button
+              disabled={loading}
+              variant="destructive"
+              size="sm"
+              onClick={() => setOpen(true)}
+            >
+              <Trash className="h-4 w-4" />
+            </Button>
+          )}
+        </div>
+        <Separator />
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="w-fit mt-4 ms-3 p-4 space-y-6"
+          >
             <FormField
-              name="label"
-              control={form.control}
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-md">{t("billboardName")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder={t("billboardName")}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
+                name="image"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-md">
+                      {t("backgroundImage")}
+                    </FormLabel>
+                    <FormControl>
+                      <ImageUploader 
+                        value={field?.value ? [field.value] : []}
+                        onChange={(url)=> field.onChange(url)}
+                        onRemove={()=> field.onChange("")}
+                        disabled={loading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            <div className="grid grid-cols-2">
+              <FormField
+                name="label"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-md">
+                      {t("billboardName")}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        disabled={loading}
+                        placeholder={t("billboardName")}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <Button variant="default" type="submit" className="mt-4">
-            {t("save")}
-          </Button>
-        </form>
-      </Form>
-      <Separator className="my-4" />
-      <ApiAlert
-        title={t("apiPublic")}
-        message={`${url}/api/billboards/${billboard?.id}`}
-        type="public"
-          />
-    </div>
+            <Button variant="default" type="submit" className="mt-4">
+              {t("save")}
+            </Button>
+          </form>
+        </Form>
+        <Separator className="my-4" />
+      </div>
     </>
   );
 };

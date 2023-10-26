@@ -37,6 +37,8 @@
     "createBillboard": "Add a new billboard",
     "editBillboardDesc": "You can here edit a billboard",
     "createBillboardDesc": "You can here create a new billboard",
-    "successDelete": "Has been deleted successfully"
+    "successDelete": "Has been deleted successfully",
+    "backgroundImage": "Background Image",
+    "uploadImage": "Upload Image"
   }
 }

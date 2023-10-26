@@ -36,6 +36,9 @@
     "createBillboard": "إضافة لوحة إعلانية جديدة",
     "createBillboardDesc": "يمكنك هنا إنشاء لوحة إعلانية جديدة",
     "editBillboard": "تحرير لوحة الإعلانات",
-    "editBillboardDesc": "يمكنك هنا تعديل لوحة الإعلانات"
+    "editBillboardDesc": "يمكنك هنا تعديل لوحة الإعلانات",
+    "backgroundImage": "صورة الخلفية",
+    "successDelete": "تم الحذف بنجاح",
+    "uploadImage": "تحميل صورة"
   }
 }
