@@ -1,24 +1,23 @@
-import BillboardForm from "./components/BilloardForm";
+import BillboardForm from "./components/BillboardForm";
 
 export default async function BillboardPage({
-    params: {billboardId},
+  params: { billboardId },
 }: {
-    params: {billboardId: string};
-}){
+  params: { billboardId: string };
+}) {
+  let billboard;
 
-    let billboard;
-
-    if (billboardId !== "new") {
+  if (billboardId !== "new") {
     billboard = await prisma?.billboard.findUnique({
-        where: {
-            id: billboardId,
-        },
+      where: {
+        id: billboardId,
+      },
     });
-    }
+  }
 
-    return(
-        <div>
-           <BillboardForm store={billboard} /> 
-        </div>
-    )
+  return (
+    <div>
+      <BillboardForm billboard={billboard} />
+    </div>
+  );
 }
