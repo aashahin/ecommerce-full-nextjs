@@ -21,7 +21,7 @@ model Store {
 }
 
 model Billboard {
-  id        String   @id @default(uuid())
+  id        String   @id
   storeId   String
   label     String
   image     String
